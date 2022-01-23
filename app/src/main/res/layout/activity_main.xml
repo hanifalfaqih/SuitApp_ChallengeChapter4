@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.GameActivity">
+
+    <TextView
+        android:id="@+id/tv_winner"
+        style="@style/Text.36.Blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_48sdp"
+        android:textAlignment="center"
+        android:text="@string/text_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/text_player"
+        style="@style/Text.20.Black"
+        app:layout_constraintEnd_toEndOf="@+id/ll_left"
+        app:layout_constraintStart_toStartOf="@+id/ll_left"
+        app:layout_constraintTop_toBottomOf="@+id/ll_left" />
+
+    <TextView
+        android:id="@+id/tv_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:text="@string/text_computer"
+        style="@style/Text.20.Black"
+        app:layout_constraintEnd_toEndOf="@+id/ll_right"
+        app:layout_constraintStart_toStartOf="@+id/ll_right"
+        app:layout_constraintTop_toBottomOf="@+id/ll_right" />
+
+    <LinearLayout
+        android:id="@+id/ll_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/fl_paper_left"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_paper">
+
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_scissor_left"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_8sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_scissor">
+
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_rock_left"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_8sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_rock">
+
+            </ImageView>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:id="@+id/fl_paper_right"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_paper">
+
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_scissor_right"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp">
+
+            <ImageView
+                android:src="@drawable/ic_scissor"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center">
+
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_rock_right"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp">
+
+            <ImageView
+                android:src="@drawable/ic_rock"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center">
+
+            </ImageView>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_reset"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:src="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ll_right"
+        app:layout_constraintStart_toEndOf="@id/ll_left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Suit Game</string>
+    <string name="text_player">Player</string>
+    <string name="text_player_win">Player Win!</string>
+    <string name="text_computer_win">Computer Win!</string>
+    <string name="text_draw">Draw!</string>
+    <string name="text_computer">Computer</string>
+    <string name="text_start">Start!</string>
+</resources>
