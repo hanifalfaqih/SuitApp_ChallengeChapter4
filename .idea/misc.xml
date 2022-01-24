@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_blue_corner_8dp.xml" value="0.2328125" />
         <entry key="app/src/main/res/drawable/ic_refresh.xml" value="0.2328125" />
+        <entry key="app/src/main/res/layout/activity_game.xml" value="0.8021978021978022" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16" />
       </map>
     </option>

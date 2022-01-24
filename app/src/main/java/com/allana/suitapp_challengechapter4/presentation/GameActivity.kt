@@ -5,9 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.allana.suitapp_challengechapter4.R
-import com.allana.suitapp_challengechapter4.databinding.ActivityMainBinding
+import com.allana.suitapp_challengechapter4.databinding.ActivityGameBinding
 import com.allana.suitapp_challengechapter4.enum.DecideWinner
 import com.allana.suitapp_challengechapter4.enum.Suit
 
@@ -17,13 +16,13 @@ class GameActivity : AppCompatActivity() {
         const val TAG = "Game Activity"
     }
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityGameBinding
     private lateinit var viewModel: GameViewModel
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initialize()
@@ -36,23 +35,23 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun setClickPlayerOptions() {
+        binding.flRockLeft.setOnClickListener {
+            binding.flPaperLeft.setBackgroundColor(0)
+            binding.flScissorLeft.setBackgroundColor(0)
+            binding.flRockLeft.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
+            processGameWinner(Suit.ROCK, viewModel.handlePickComputer())
+        }
         binding.flPaperLeft.setOnClickListener {
-            binding.flPaperLeft.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
+            binding.flPaperLeft.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
             binding.flScissorLeft.setBackgroundColor(0)
             binding.flRockLeft.setBackgroundColor(0)
             processGameWinner(Suit.PAPER, viewModel.handlePickComputer())
         }
         binding.flScissorLeft.setOnClickListener {
             binding.flPaperLeft.setBackgroundColor(0)
-            binding.flScissorLeft.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
+            binding.flScissorLeft.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
             binding.flRockLeft.setBackgroundColor(0)
             processGameWinner(Suit.SCISSOR, viewModel.handlePickComputer())
-        }
-        binding.flRockLeft.setOnClickListener {
-            binding.flPaperLeft.setBackgroundColor(0)
-            binding.flScissorLeft.setBackgroundColor(0)
-            binding.flRockLeft.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
-            processGameWinner(Suit.ROCK, viewModel.handlePickComputer())
         }
         binding.btnReset.setOnClickListener {
             setClickPlayerOptions()
@@ -102,21 +101,16 @@ class GameActivity : AppCompatActivity() {
             Suit.ROCK -> {
                 binding.flPaperRight.setBackgroundColor(0)
                 binding.flScissorRight.setBackgroundColor(0)
-                binding.flRockRight.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
+                binding.flRockRight.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
             }
             Suit.PAPER -> {
-                binding.flPaperRight.setBackgroundColor(ContextCompat.getColor(this, R.color.blue))
+                binding.flPaperRight.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
                 binding.flScissorRight.setBackgroundColor(0)
                 binding.flRockRight.setBackgroundColor(0)
             }
             else -> {
                 binding.flPaperRight.setBackgroundColor(0)
-                binding.flScissorRight.setBackgroundColor(
-                    ContextCompat.getColor(
-                        this,
-                        R.color.blue
-                    )
-                )
+                binding.flScissorRight.setBackgroundResource(R.drawable.bg_blue_corner_8dp)
                 binding.flRockRight.setBackgroundColor(0)
             }
         }
